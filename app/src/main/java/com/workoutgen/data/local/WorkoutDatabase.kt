@@ -13,7 +13,7 @@ import com.workoutgen.data.local.entity.*
         WorkoutLogEntity::class,
         UserProfileEntity::class
     ],
-    version = 1,
+    version = 2,
     exportSchema = true
 )
 @TypeConverters(Converters::class)
