@@ -1,0 +1,38 @@
+# Cursor Rules for WorkoutGen
+
+## Project Context
+This is an Android Kotlin app using Jetpack Compose, Hilt, Room, and Clean Architecture.
+
+## Code Style
+- Use Kotlin idioms (scope functions, null safety, data classes)
+- Use StateFlow for ViewModel state, Flow for repository data
+- Use Material 3 components from androidx.compose.material3
+- Add @Preview functions for composables
+- Use suspend for one-shot operations, Flow for streams
+
+## Architecture
+- UI Layer: Compose screens + ViewModels
+- Domain Layer: Use cases + Models + Repository interfaces
+- Data Layer: Room entities + DAOs + Repository implementations
+
+## Key Files
+- AI Logic: domain/usecase/AIWorkoutGenerator.kt
+- Models: domain/model/Models.kt
+- Exercises: data/local/ExerciseLibrary.kt (870+ exercises)
+- Programs: data/local/BuiltInPrograms.kt
+
+## Patterns
+- ViewModels: @HiltViewModel with StateFlow<UiState>
+- Screens: @Composable with Scaffold, TopAppBar
+- Navigation: type-safe routes in Navigation.kt
+
+## Don't
+- Use LiveData (use StateFlow)
+- Use XML layouts (Compose only)
+- Access Room from ViewModels directly (use repositories)
+- Create singletons manually (use Hilt)
+
+## Testing
+- Unit tests for use cases and calculators
+- Integration tests for repositories
+- Compose tests for screens
